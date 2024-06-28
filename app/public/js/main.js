@@ -1,13 +1,17 @@
-const elem = document.querySelector('.carousel');
-const nextButton = document.querySelector('.button--next');
+const SCROLL_THRESHOLD = 1000
+const SCROLL_SPEED_THRESHOLD = 5
+const elem = document.querySelector('.carousel')
+const nextButton = document.querySelector('.button--next')
 
-const flkty = new Flickity(elem, {
+let allowFlick = true
+
+const flick = new Flickity(elem, {
     pageDots: false,
     wrapAround: true,
-    freeScroll: true,
     prevNextButtons: false
 });
 
+
 nextButton.addEventListener('click', () => {
-    flkty.next();
+    flick.next();
 });
